@@ -42,8 +42,14 @@ public class BlogPostController {
     public String deletePostWithId(@PathVariable Long id, BlogPost blogPost){
         blogPostRepository.deleteById(id);
         return "blogpost/index";
+        
+        //added the functional delete button//
 
-  
+  @RequestMapping(value = "/blogposts/{id}", method = RequestMethod.DELETE)
+    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost) {
+
+        blogPostRepository.deleteById(id);
+        return "blogpost/index";
 
 }
     } 
